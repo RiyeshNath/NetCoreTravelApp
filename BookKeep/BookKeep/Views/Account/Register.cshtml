@@ -1,0 +1,81 @@
+﻿@model BookKeep.ViewModels.RegisterViewModel;
+@{
+    Layout = "~/Views/Shared/_LogInLayout.cshtml";
+}
+<h2 class="text-center">Register Page</h2>
+<form method="post" class="form-horizontal" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="All">
+        <div class="form-group">
+            <label asp-for="First_name"></label>
+            <input class="form-control" asp-for="First_name" />
+            <span asp-validation-for="First_name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Last_name"></label>
+            <input class="form-control" asp-for="Last_name" />
+            <span asp-validation-for="Last_name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email_id"></label>
+            <input class="form-control" asp-for="Email_id" />
+            <span asp-validation-for="Email_id"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Confirmpassword"></label>
+            <input class="form-control" asp-for="Confirmpassword" />
+            <span asp-validation-for="Confirmpassword"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mobile_number"></label>
+            <input class="form-control" asp-for="Mobile_number" />
+            <span asp-validation-for="Mobile_number"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="States"></label>
+            <select class="form-control" asp-for="SelectedState"
+                    asp-items="@(new SelectList(Model.States, "StateId","StateName"))"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="City"></label>
+            <input class="form-control" asp-for="City" />
+            <span asp-validation-for="City"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ZipCode"></label>
+            <input class="form-control" asp-for="ZipCode" />
+            <span asp-validation-for="ZipCode"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age"></label>
+            <input class="form-control" asp-for="Age" />
+            <span asp-validation-for="Age"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="NightVentures"></label>
+            <select class="form-control" asp-for="NightVentures"
+                    asp-items="@new SelectList(Model.InterestRank)"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="FoodVentures"></label>
+            <select class="form-control" asp-for="FoodVentures"
+                    asp-items="@new SelectList(Model.InterestRank)"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="ArtandCultureVentures"></label>
+            <select class="form-control" asp-for="ArtandCultureVentures"
+                    asp-items="@new SelectList(Model.InterestRank)"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="OutDoors"></label>
+            <select class="form-control" asp-for="OutDoors"
+                    asp-items="@new SelectList(Model.InterestRank)"></select>
+        </div>
+        <div><input class="form-control" type="submit" value="Register" /></div>
+    </div>
+</form>
+

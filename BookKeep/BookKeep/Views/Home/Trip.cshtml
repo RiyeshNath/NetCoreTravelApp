@@ -1,0 +1,13 @@
+﻿@model BookKeep.ViewModels.TripViewModel;
+
+<div class="text-center">
+    <h3>@Model.CurrTrip.TripName</h3>
+</div>
+
+<div class="text-right">
+    <h6>Budget: @Model.CurrTrip.Budget</h6>
+    <h6>Spent: @Model.CurrTrip.Spent</h6>
+    <h6>Leftover: @(Model.CurrTrip.Budget -Model.CurrTrip.Spent)</h6>
+    <h6>Start Date: @Model.CurrTrip.StartDate</h6>
+    <h6>End Date: @Model.CurrTrip.EndDate</h6>
+</div>

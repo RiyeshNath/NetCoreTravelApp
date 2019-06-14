@@ -1,0 +1,37 @@
+﻿@model BookKeep.ViewModels.AddTripViewModel;
+<h2 class="text-center">Add Trip</h2>
+<form method="post" class="form-horizontal" asp-controller="UserForm" asp-action="AddTrip">
+    <div asp-validation-summary="All">
+        <div class="form-group">
+            <label asp-for="TripName"></label>
+            <input class="form-control" asp-for="TripName" />
+            <span asp-validation-for="TripName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Country"></label>
+            <input class="form-control" asp-for="Country" />
+            <span asp-validation-for="Country"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="City"></label>
+            <input class="form-control" asp-for="City" />
+            <span asp-validation-for="City"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Budget"></label>
+            <input class="form-control" asp-for="Budget" />
+            <span asp-validation-for="Budget"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="StartDate"></label>
+            <input id="startdate" class="form-control" asp-for="StartDate" />
+            <span asp-validation-for="StartDate"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EndDate"></label>
+            <input id="enddate" class="form-control" asp-for="EndDate" />
+            <span asp-validation-for="EndDate"></span>
+        </div>
+        <div><input class="form-control" onclick="TDate(event);" type="submit" value="Add" /></div>
+    </div>
+</form>
